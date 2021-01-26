@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import MainForm from './MainForm';
-import MainSummary from './MainSummary';
+import Header from '../Header/Header';
+import Form from '../Form/Form';
+import Cart from '../Cart/Cart';
+
 import './App.css';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
-  currency: 'USD'
+  currency: 'USD',
 });
 
 class App extends Component {
@@ -16,28 +17,32 @@ class App extends Component {
     selected: {
       Processor: {
         name: '17th Generation Intel Core HB (7 Core with donut spare)',
-        cost: 700
+        cost: 700,
       },
       'Operating System': {
         name: 'Ubuntu Linux 16.04',
-        cost: 200
+        cost: 200,
       },
       'Video Card': {
         name: 'Toyota Corolla 1.5v',
-        cost: 1150.98
+        cost: 1150.98,
       },
       Display: {
         name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
-        cost: 1500
-      }
-    }
+        cost: 1500,
+      },
+    },
   };
 
   updateFeature = (feature, newValue) => {
+    console.log('updating feature');
+
+    console.log(feature, newValue);
+
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
-      selected
+      selected,
     });
   };
 
@@ -51,12 +56,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <MainForm
+          <Form
             selected={this.state.selected}
             updateFeature={this.updateFeature}
             USCurrencyFormat={USCurrencyFormat}
           />
-          <MainSummary
+          <Cart
             selected={this.state.selected}
             USCurrencyFormat={USCurrencyFormat}
             total={total}
