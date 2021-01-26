@@ -27,12 +27,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakeelizondo/laptop_customizer.git"
+    "url": "git+https://github.com/osiristhevirus7/laptop_customizer"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jakeelizondo/laptop_customizer/issues"
+  "license": "ISC",]
   },
-  "homepage": "https://github.com/jakeelizondo/laptop_customizer#readme"
+  "homepage": "https://github.com/osiristhevirus7/laptop_customizer"
 }
